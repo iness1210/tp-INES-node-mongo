@@ -4,7 +4,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const patientRoutes = require("./routes/patientRoutes");
-
+const consultationRoutes = require("./routes/consultationRoutes");
 
 const app = express();
 
@@ -22,7 +22,7 @@ app.get("/api/health", (req, res) => {
 });
 
 app.use("/api/patients", patientRoutes);
-
+app.use("/api/consultations", consultationRoutes);
 
 // Route inconnue
 app.use((req, res) => {
